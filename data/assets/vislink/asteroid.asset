@@ -1,0 +1,31 @@
+local assetHelper = asset.require("util/asset_helper")
+local earth = asset.require("scene/solarsystem/planets/earth/earth")
+local transforms = asset.require("scene/solarsystem/planets/earth/transforms")
+
+local Asteroid = {
+    Identifier = "Asteroid",
+    Parent = earth.Earth.Identifier,
+    Transform = {
+        Translation = {
+            Type = "GlobeTranslation",
+            Globe = earth.Earth.Identifier,
+            Longitude = -126.932815,
+            Latitude = 48.266374,
+        }
+    },
+    Renderable = {
+        Type = "RenderableVisLink",
+        Size = {1, 1, 1},
+        ScalingExponent = 6,
+        -- ScalingExponent = 10,
+        StepSize = 0.01,
+        Color = {1, 0, 0, 1},
+	VisLinkTexture = "Asteroid"
+    },
+    GUI = {
+        Path = "/asteroid"
+    }
+}
+
+local objects = { Asteroid }
+assetHelper.registerSceneGraphNodesAndExport(asset, objects)

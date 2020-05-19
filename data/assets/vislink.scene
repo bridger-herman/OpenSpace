@@ -1,6 +1,7 @@
 asset.require('./base')
 -- asset.require('vislink/vislink')
-asset.require('vislink/gulfofmexico')
+-- asset.require('vislink/gulfofmexico')
+-- asset.require('vislink/asteroid')
 -- asset.require('vislink/canoe')
 
 local earthAsset = asset.require('scene/solarsystem/planets/earth/earth')
@@ -8,13 +9,14 @@ local earthAsset = asset.require('scene/solarsystem/planets/earth/earth')
 asset.onInitialize(function ()
     local now = openspace.time.currentWallTime()
     -- Jump back one day to be able to show complete weather data on Earth.
-    openspace.time.setTime(openspace.time.advancedTime(now, "-1d"))
+    -- openspace.time.setTime(openspace.time.advancedTime(now, "-1d"))
+    openspace.time.setTime("2020 APR 22 18:00:00")
 
     openspace.globebrowsing.goToGeo("Earth", 58.5877, 16.1924, 20000000)
 
-    openspace.markInterestingNodes({ "Earth", "Mars", "Moon", "Sun", "VisLink", "GulfOfMexico", "Canoe" })
+    openspace.markInterestingNodes({ "Earth", "Mars", "Moon", "Sun", "VisLink", "GulfOfMexico", "Asteroid" })
 end)
 
 asset.onDeinitialize(function ()
-    openspace.removeInterestingNodes({ "Earth", "Mars", "Moon", "Sun", "VisLink", "GulfOfMexico", "Canoe" })
+    openspace.removeInterestingNodes({ "Earth", "Mars", "Moon", "Sun", "VisLink", "GulfOfMexico", "Asteroid" })
 end)

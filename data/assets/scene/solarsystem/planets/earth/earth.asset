@@ -53,7 +53,7 @@ local Earth = {
                             }
                         },
                     },
-                    Enabled = true,
+                    Enabled = false,
                     PadTiles = false,
                     Fallback = {
                         Identifier = "Blue_Marble",
@@ -65,7 +65,15 @@ local Earth = {
                 {
                     Identifier = "ESRI_World_Imagery",
                     Name = "ESRI World Imagery",
-                    FilePath = mapServiceConfigsPath .. "/ESRI/World_Imagery.wms"
+                    FilePath = mapServiceConfigsPath .. "/ESRI/World_Imagery.wms",
+                    Enabled = true,
+                    PadTiles = false,
+                    Fallback = {
+                        Identifier = "Blue_Marble",
+                        Name = "Blue Marble",
+                        FilePath = texturesPath .. "/earth_bluemarble.jpg",
+                        Enabled = true
+                    }
                 },
                 {
                     Identifier = "ESRI_Imagery_World_2D",

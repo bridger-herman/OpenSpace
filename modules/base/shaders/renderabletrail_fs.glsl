@@ -42,7 +42,8 @@ uniform float opacity = 1.0;
 
 Fragment getFragment() {
     Fragment frag;
-    frag.color = vec4(color * fade, fade * opacity);
+    frag.color = vec4(color * fade, fade * 0);
+    //frag.color = vec4(color * fade, fade * opacity);
     frag.depth = vs_positionScreenSpace.w;
     frag.blend = BLEND_MODE_ADDITIVE;
 
