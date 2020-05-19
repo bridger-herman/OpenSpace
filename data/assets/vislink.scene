@@ -1,6 +1,6 @@
 asset.require('./base')
 -- asset.require('vislink/vislink')
--- asset.require('vislink/gulfofmexico')
+asset.require('vislink/gulfofmexico')
 -- asset.require('vislink/asteroid')
 -- asset.require('vislink/canoe')
 
